@@ -1,0 +1,31 @@
+package selenium.practices;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class webElementMethod19 {
+
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://omayo.blogspot.com/");
+		driver.manage().window().maximize();
+		WebElement searchThisBlog =driver.findElement(By.xpath("//input[@name=\"q\" and @size=\"10\"]"));
+		searchThisBlog.sendKeys("Welcome to Codemind");
+		searchThisBlog.clear();
+		System.out.println(searchThisBlog.getAccessibleName());
+		System.out.println(searchThisBlog.getAriaRole());
+		System.out.println(searchThisBlog.getAttribute("title"));
+		searchThisBlog.sendKeys("Welcome to Codemind");
+		System.out.println(searchThisBlog.getAttribute("value"));
+
+		Point p = searchThisBlog.getLocation();
+
+		System.out.println(p.getX());
+
+		System.out.println(p.getY());
+	}
+
+}

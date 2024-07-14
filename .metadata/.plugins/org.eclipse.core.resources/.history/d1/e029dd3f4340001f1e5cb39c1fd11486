@@ -1,0 +1,19 @@
+package SeleniumPractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebElenentsPractice {
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://omayo.blogspot.com/");
+		WebElement wb=driver.findElement(By.xpath("//div[@id=\"myDropdown\"]/..//button"));
+		String C=wb.getCssValue("color");
+		System.out.println(C);
+		driver.close();
+	}
+
+}
