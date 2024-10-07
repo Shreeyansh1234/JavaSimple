@@ -1,0 +1,30 @@
+package Practice;
+
+import java.util.HashSet;
+import java.util.TreeSet;
+
+import com.codemind.b11.SringFinding;
+
+public class impEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		String s="welcome to new job";
+//		String result=reverse1(s);
+//		System.out.println(result);
+//
+//	}
+//	
+//	public static String reverse1(String ss) {
+//		StringBuilder sb=new StringBuilder(ss);
+//		return sb.reverse().toString();
+		
+		int arr[]= {2,4,2,5,6};
+		TreeSet<Integer>s=new TreeSet<Integer>();
+		for(int a:arr) {
+			s.add(a);
+		}
+		System.out.println(s);
+	}
+
+}

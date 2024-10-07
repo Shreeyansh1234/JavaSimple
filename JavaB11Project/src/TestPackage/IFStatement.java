@@ -28,7 +28,7 @@ class DecisionMaking{
 	}
 	
 	void colorprint() {
-		String col="Red";
+		String col="Pink";
 		
 		switch(col) {
 		case ("Red"):System.out.println("Red Colur");
@@ -37,7 +37,7 @@ class DecisionMaking{
 			break;
 		case("white"):System.out.println("White colur");
 			break;
-		default:System.out.println("Color is nit matching");
+		default:System.out.println("Color is not matching");
 			
 		}
 	

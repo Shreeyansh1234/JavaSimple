@@ -1,0 +1,88 @@
+package Practice;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class StringInterviewQ {
+
+	public static void main(String[] args) {
+		/* nput :Selenium
+		Output
+		S=1
+		e=2
+		l=1
+		n=1
+		i=1
+		u=1
+		m=1
+		
+		String s="Selenium";
+		int S=0,e=0,l=0,n=0,i=0,u=0,m=0;
+		for(int z=0;i<=s.length();z++) {
+			if(s.charAt(z)=='S') {
+				S=+1;
+			}
+			
+		}
+		System.out.println("Count of S: "+S);*/
+		
+		//Input :  AutomatioN
+		//Output : NutomationA
+		
+		/*StringBuilder s=new StringBuilder("AutomatioN");
+		char c=s.charAt(0);
+		char l=s.charAt(s.length()-1);
+		public class Main {
+    public static void main(String[] args) {
+        String input = "AutomatioN";
+        String output = rotateString(input);
+        System.out.println(output);
+    }
+
+    public static String rotateString(String s) {
+        if (s.length() <= 1) {
+            return s;
+        }
+        return s.charAt(s.length() - 1) + s.substring(1, s.length() - 1) + s.charAt(0);
+    }
+}
+*/
+		//
+		
+//		String ss="AutomatioN";
+//		char[] s=ss.toCharArray();
+//		char temp=s[0];
+//		s[0]=s[ss.length-1];
+//		s[ss.length()-1]=temp;
+//		System.out.println(ss);
+//		String newStr=new String(ss);
+//		System.out.println(newStr);
+		
+		 String Input="AutomatioN";
+	        String t="";
+	       char F=Input.charAt(Input.length()-1);
+	       char L=Input.charAt(0);
+	        t=F+Input.substring(1,Input.length()-1)+L;
+	        System.out.println(t);
+		
+	        String s="Selenium";
+	        Map<Character, Integer> m=new HashMap<Character, Integer>();
+	        char c[]=s.toCharArray();
+	        for(char l:c) {
+	        	if(m.containsKey(l)) {
+	        		m.put(l, m.get(l)+1);
+	        	}
+	        	else {
+	        		m.put(l,1 );
+	        	}
+	        }
+	        
+	        Set<Map.Entry<Character, Integer>>set=m.entrySet();
+	        for(Map.Entry<Character, Integer> me:set ) {
+	        	System.out.println(me.getKey() + me.getValue());
+	        }
+	        
+	}
+
+}

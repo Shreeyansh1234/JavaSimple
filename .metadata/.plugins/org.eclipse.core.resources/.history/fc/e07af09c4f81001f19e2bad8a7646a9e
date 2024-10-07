@@ -1,0 +1,244 @@
+package Practice;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Pract {
+
+	public static void main(String[] args) {
+//fibo Series
+		int a = 0, b = 1;
+		System.out.print(a + " " + b);
+		for (int i = 2; i < 8; i++) {
+			int c = a + b;
+			System.out.print(" " + c);
+			a = b;
+			b = c;
+		}
+		System.out.println(" ");
+
+//prime No
+		int r = 13;
+		boolean prime = true;
+		for (int j = 2; j < r; j++) {
+			if (r % j == 0) {
+				prime = false;
+				break;
+			}
+
+		}
+		if (prime == true) {
+			System.out.println("Number is prime");
+		} else {
+			System.out.println("Number is not prime");
+		}
+
+		System.out.println();
+
+//Palindrom and reveres
+		// boolean pali=true;
+		String s = "madam1";
+		StringBuilder SB = new StringBuilder(s);
+		String g = SB.reverse().toString();
+		System.out.println("Reversed String  " + g);
+		if (s.equals(g)) {
+			System.out.println("palindrom");
+		} else {
+			System.out.println("not palindrom");
+		}
+		System.out.println();
+
+//Remove duplicates from an array 
+		int arr[] = { 2, 3, 1, 2, 6, 9, 6, 8, 5, 5, 5, 5, 5, 5 };
+		LinkedHashSet<Integer> l = new LinkedHashSet<Integer>();
+		for (int i = 0; i < arr.length; i++)
+			l.add(arr[i]);
+		System.out.println(l);
+
+		/*
+		 * List <Integer> primes = new ArrayList<Integer>(); primes.add(2);
+		 * primes.add(3); primes.add(5); primes.add(7); //duplicate primes.add(7);
+		 * primes.add(11); primes.add(7); primes.add(6); primes.add(6);
+		 * 
+		 * Set<Integer> arrWithoutDuplicate=new LinkedHashSet<Integer>(primes);
+		 * primes.clear(); primes.addAll(arrWithoutDuplicate);
+		 * System.out.println(primes);
+		 **/
+
+//Remove Dulicates, asked in capgemini interview
+		String capgemini = "sdgtrrrds";
+		String ns = "";
+		for (int i = 0; i < capgemini.length(); i++) {
+			char c = capgemini.charAt(i);
+			if (ns.contains(Character.toString(c))) {
+				continue;
+
+			} else
+				ns += c;
+		}
+		System.out.println(ns);
+//find duplicate characters in a given String.
+
+		String str = "characters";
+		char ar[] = str.toCharArray();
+		Map<Character, Integer> dict = new HashMap<Character, Integer>();
+		for (Character cc : ar) {
+			if (dict.containsKey(cc)) {
+				dict.put(cc, dict.get(cc) + 1);
+			} else {
+				dict.put(cc, 1);
+			}
+		}
+
+		Set<Map.Entry<Character, Integer>> entrySet = dict.entrySet();
+		System.out.println("List of duplicate characters in String: " + str);
+		for (Map.Entry<Character, Integer> entry : entrySet) {
+			if (entry.getValue() > 1) {
+				System.out.println(entry.getKey() + " :  " + entry.getValue());
+			}
+		}
+
+//Find Square Root of a Number in Java
+		double aa = 100;
+		double sq = Math.sqrt(aa);
+		System.out.println("Square root of number " + sq);
+
+		// Reverse Array
+		int arr1[] = { 9, 7, 6, 5, 4, 7, 8, 9, 1 };
+		for (int i = arr1.length - 1; i >= 0; i--) {
+			System.out.print(arr1[i] + " ");
+		}
+		System.out.println("++++++++++++++++++");
+//Reverse words of a sentence
+		String sr = "Reverse words of a sentence";
+		String st[] = sr.split(" ");
+		System.out.println(st[0]);
+		for (String i : st) {
+			for (int j = i.length() - 1; j >= 0; j--) {
+				System.out.print(i.charAt(j));
+			}
+			System.out.println();
+		}
+
+		System.out.println();
+
+//Capitalize single letter
+		
+		String sc="Pune Codemind Technology";
+		String arr10[]=sc.split(" ");
+		StringBuilder result = new StringBuilder(); 
+				
+		for(String word:arr10) {
+			
+		int last_Index=word.length()-1;
+		
+		char last=Character.toUpperCase(word.charAt(last_Index));
+		String ss=word.substring(0,last_Index)+last;
+		
+		result.append(ss).append(" ");
+		
+		}
+		System.out.println(result.toString().trim());
+
+//Another way
+		String sp = "welcome to chennai";
+		sp += " ";
+		String nsr = "";
+		String nss = "";
+		int count = 0;
+		for (int i = 0; i < sp.length(); i++) {
+			char c = sp.charAt(i);
+			if (c != ' ') {
+				nsr += c;
+			} else {
+				char f = nsr.charAt(1);// nsr.charAt(0) for 0th index
+				f = Character.toUpperCase(f);
+				nss = nss + nsr.charAt(0) + f + nsr.substring(2) + " "; // nss=nss+f+ns.substring(1)+" "; for 0th index
+				nsr = "";
+			}
+		}
+
+		System.out.println("Capitalize single letter " + nss);
+
+//The first non-repeated character of String
+		String sm = "pootyfotop";
+		boolean repeated;
+
+		for (int i = 0; i < sm.length(); i++) {
+			repeated = false;
+			for (int j = 0; j < sm.length(); j++) {
+				if (i != j && sm.charAt(i) == sm.charAt(j)) {
+					repeated = true;
+					break;
+				}
+			}
+			if (!repeated) {
+				System.out.println("First non-repeated character: " + sm.charAt(i));
+				break;
+			}
+		}
+
+		// Remove space from string
+		String cg = "asdf ghjk";
+		String re = cg.replace(" ", "");
+		System.out.println("After removing space re: " + re);
+
+		// Another ways
+		String cg1 = "";
+		for (int i = 0; i < cg.length(); i++) {
+			if (cg.charAt(i) == ' ') {
+				continue;
+			} else {
+				cg1 = cg1 + cg.charAt(i);
+			}
+
+		}
+		System.out.println("After removing space: " + cg1);
+
+		// Another ways
+		StringBuilder srb = new StringBuilder();
+		for (int i = 0; i < cg.length(); i++) {
+			if (cg.charAt(i) != ' ') {
+				srb.append(cg.charAt(i));
+			}
+		}
+		System.out.println("Anothet way After removing space: " + srb.toString());
+
+		// converting uppercase to lower case
+		String up = "ASDFH";
+		String sss = up.toLowerCase();
+		System.out.println("LowerCase: " + sss);
+		// Another
+
+		StringBuilder up1 = new StringBuilder();
+		for (int i = 0; i < up.length(); i++) {
+			char ccc = Character.toLowerCase(up.charAt(i));
+			up1.append(ccc);
+
+		}
+		System.out.println("LowerCase: " + up1);
+
+		// Given an array containing numbers from 1 to n with one number missing, the
+		// task is to find the missing number.
+		int[] array = { 1, 2, 3, 4, 5, 7, 8 };
+		int missingNumber = findMissingNumber(array);
+		System.out.println("The missing number is: " + missingNumber);
+	}
+
+	public static int findMissingNumber(int[] array) {
+		int n = array.length + 1; // +1 bcoz one num is missing
+		int sum = n * (n + 1) / 2;
+		int arraySum = 0;
+		for (int element : array) {
+			arraySum += element;
+		}
+		return sum - arraySum;
+
+	}
+
+}

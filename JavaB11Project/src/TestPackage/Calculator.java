@@ -39,8 +39,10 @@ public class Calculator {
 		
 		int multivalue=c.Multiplication();
 		System.out.println("Value "+multivalue);
-		
-		int Div_value=c.Division(10,2);
-		System.out.println("Divalue "+Div_value);
+		c.Multiplication();
+		System.out.println("********************");
+		c.Division(10,2);
+int Div_value=c.Division(10,2);
+System.out.println("Divalue "+Div_value);
 	}
 }

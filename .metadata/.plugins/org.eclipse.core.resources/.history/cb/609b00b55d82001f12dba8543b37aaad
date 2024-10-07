@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] a = {5, 4, 8, 6, 9, 2, 1, 6, 5, 4};
+        int[] b = {6, 4, 5, 9};
+
+        // Count occurrences of elements in array 'a'
+        Map<Integer, Integer> countMap = new HashMap<>();
+        for (int num : a) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+        }
+
+        // List to store the result
+        List<Integer> result = new ArrayList<>();
+
+        // Add elements of 'b' to result as per their count in 'a'
+        for (int num : b) {
+            if (countMap.containsKey(num)) {
+                int count = countMap.get(num);
+                for (int i = 0; i < count; i++) {
+                    result.add(num);
+                }
+                countMap.remove(num);
+            }
+        }
+
+        // Add remaining elements of 'a' to result
+        for (int num : a) {
+            if (countMap.containsKey(num)) {
+                int count = countMap.get(num);
+                for (int i = 0; i < count; i++) {
+                    result.add(num);
+                }
+                countMap.remove(num);
+            }
+        }
+
+        // Convert list to array
+        int[] c = result.stream().mapToInt(Integer::intValue).toArray();
+
+        // Print the result
+        System.out.println(Arrays.toString(c));
+    }
+}
